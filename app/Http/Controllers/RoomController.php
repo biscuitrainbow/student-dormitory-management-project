@@ -8,7 +8,7 @@ use App\Room;
 class RoomController extends Controller
 {
     public function index(){
-        $rooms = Room::all();
+        return $rooms = Room::with('maintenances')->get();
         return view('room-index',compact('rooms'));
     }
 

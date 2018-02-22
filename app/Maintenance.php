@@ -9,18 +9,12 @@ class Maintenance extends Model
 {
     protected $guarded=[];
 
-    public static function items()
-    {
-        $return = DB::table('maintenances as m')
-        ->select('*')
-        ->addselect('r.number as room_number')       
-        ->join('rooms as r', 'm.room_id', '=', 'r.id')
-        
-         ->get();
+    public function room(){
+        return $this->belongsTo(Room::class,'room_id');
+    }
 
-        // dd($return);
-
-        return $return;
+    public function customer(){
+        return $this->belongsTo(Customer::class,'customer_id');
     }
 
 }

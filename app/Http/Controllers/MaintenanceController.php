@@ -8,7 +8,7 @@ use App\Maintenance;
 class MaintenanceController extends Controller
 {
     public function index(){
-        $maintenances = Maintenance::items();
+        $maintenances = Maintenance::with('room')->get();
 
         
         

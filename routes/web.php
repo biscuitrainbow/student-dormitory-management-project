@@ -20,6 +20,8 @@ Route::get('/customer/index','CustomerController@index');
 
 Route::get('/maintenance/index','MaintenanceController@index');
 
+Route::get('/user/index','UserController@index');
+
 
 Route::get('/edit','RoomController@edit');
 

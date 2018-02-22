@@ -10,7 +10,7 @@
                   <th>Status</th>
                   <th>Buide</th>
                   <th>Number</th>
-                  
+                  <th>Tel</th>
                   <th>Manage</th>
                 </tr>
               </thead>
@@ -20,8 +20,9 @@
                   <td>{{$maintenance->id}}</td>
                   <td>{{$maintenance->name}}</td>
                   <td>{{$maintenance->status}}</td>
-                  <td>{{$maintenance->building}}</td>
-                  <td>{{$maintenance->room_number}}</td>
+                  <td>{{$maintenance->room->building}}</td>
+                  <td>{{$maintenance->room->number}}</td>
+                  <td>{{$maintenance->customer->tel}}</td>
                   
                  
 				  <td><a href="product-edit.php?id='.$result['id'].'" class="btn btn-warning">Edit</a>
