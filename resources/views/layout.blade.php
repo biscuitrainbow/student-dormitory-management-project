@@ -24,7 +24,7 @@
       <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sign out</a>
+          <a class="nav-link" href="/logout">Sign out</a>
         </li>
       </ul>
     </nav>
@@ -35,13 +35,13 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-              <a class="nav-link " href="#">
+              <a class="nav-link " href="/dashboard">
               <span data-feather="bar-chart-2"></span>
               Dashboard <span class="sr-only">(current)</span>
               </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/user/index">
                   <span data-feather="user"></span>
                   Users 
                 </a>

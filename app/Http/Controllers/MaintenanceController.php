@@ -8,10 +8,7 @@ use App\Maintenance;
 class MaintenanceController extends Controller
 {
     public function index(){
-        $maintenances = Maintenance::with('room')->get();
-
-        
-        
+        $maintenances = Maintenance::with('room','customer')->get();
         return view('maintenance-index',compact('maintenances'));
     }
 }

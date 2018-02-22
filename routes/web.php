@@ -11,19 +11,31 @@
 |
 */
 
-Route::get('/room/index','RoomController@index');
-Route::get('/room/create','RoomController@create');
-Route::get('/room/delete/{room}','RoomController@delete');
-Route::post('/room/create','RoomController@store');
+Route::get('/room/index','RoomController@index')->middleware('auth');
+Route::get('/room/create','RoomController@create')->middleware('auth');
+Route::get('/room/delete/{room}','RoomController@delete')->middleware('auth');
+Route::post('/room/create','RoomController@store')->middleware('auth');
 
-Route::get('/customer/index','CustomerController@index');
+Route::get('/customer/index','CustomerController@index')->middleware('auth');
 
-Route::get('/maintenance/index','MaintenanceController@index');
+Route::get('/maintenance/index','MaintenanceController@index')->middleware('auth');
 
-Route::get('/user/index','UserController@index');
+Route::get('/user/index','UserController@index')->middleware('auth');
+
+Route::get('/login','UserController@login')->name('login');
+Route::get('/logout','UserController@logout')->middleware('auth');
+
+Route::get('/signup','UserController@signup');
+Route::post('/signup','UserController@store');
+
+Route::post('/login','UserController@authenticate');
+
+Route::get('/dashboard','DashboardController@index')->middleware('auth');
 
 
-Route::get('/edit','RoomController@edit');
+
+
+Route::get('/edit','RoomController@edit')->middleware('auth');
 
 
 
