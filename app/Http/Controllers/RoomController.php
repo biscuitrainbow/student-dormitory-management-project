@@ -31,5 +31,18 @@ class RoomController extends Controller
         return redirect('/room/index');
         
     }
+
+    public function edit(Room $room){
+        return view('room-edit',compact('room'));   
+    }
+
+    public function update(Room $room){
+        $room->update([
+            'building' => request()->build,
+            'number' => request()->number,
+            'status'=>request()->status,
+        ]);
+        return redirect('/room/index');
+    }
 }
 

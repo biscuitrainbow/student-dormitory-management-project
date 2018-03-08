@@ -15,8 +15,8 @@ class CreateTableDormitory extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('lastname');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('username');
             $table->string('password');
             $table->timestamps();
@@ -27,18 +27,17 @@ class CreateTableDormitory extends Migration
             $table->string('building');
             $table->string('number');
             $table->string('status');
-            
             $table->timestamps();
         });
 
        
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('lastname');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('address');
-            $table->string('email');
-            $table->string('tel');
+            $table->string('telephone');
+            $table->string('e_mail');
             $table->timestamps();
         });
 
@@ -46,6 +45,7 @@ class CreateTableDormitory extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('status');
+
             $table->integer('room_id')->unsigned();
             $table->foreign('room_id')->references('id')->on('rooms');
 
@@ -57,10 +57,11 @@ class CreateTableDormitory extends Migration
 
         Schema::create('invoices', function (Blueprint $table) {
             $table->increments('id');
-            $table->float('price');
+            $table->float('room_price');
+            $table->integer('net_price');
             $table->integer('water_unit');
             $table->integer('electricity_unit');
-            $table->integer('internet');
+            
             $table->float('total');
 
             $table->integer('room_id')->unsigned();
@@ -75,9 +76,12 @@ class CreateTableDormitory extends Migration
 
         Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('earnest_money');
+            $table->string('insurer_money');
             $table->timestamp('start')->nullable();
             $table->timestamp('end')->nullable();
-            
+            $table->string('status');
+            $table->string('witness_name');
 
             $table->integer('room_id')->unsigned();
 

@@ -19,7 +19,7 @@
                   <td>{{$room->building}}</td>
                   <td>{{$room->number}}</td>
                   <td>{{$room->status}}</td>  
-				  <td><a href="product-edit.php?id='.$result['id'].'" class="btn btn-warning">Edit</a>
+				  <td><a href="/room/edit/{{$room->id}}" class="btn btn-warning">Edit</a>
               <a href="/room/delete/{{$room->id}}" class="btn btn-danger">Delete</a></td>
                 </tr>
                 @endforeach

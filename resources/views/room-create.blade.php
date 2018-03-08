@@ -7,7 +7,7 @@
               <thead>
                 <form action="/room/create" method="post">
                 {{csrf_field()}}
-                  <div class="form-group"><form action="/room/create" method="post">
+                  <div class="form-group">
                       <label for="name">Building</label>
                       <input type="text" class="form-control" name="build" id="name" placeholder="Building" required="" value="">
                       <label for="name">Number</label>
