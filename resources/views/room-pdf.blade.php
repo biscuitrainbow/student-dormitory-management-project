@@ -17,6 +17,31 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+@font-face {
+  font-family: 'THSarabunNew';
+  font-style: normal;
+  font-weight: normal;
+  src: url("{{asset('fonts/THSarabunNew/THSarabunNew.ttf')}}") format('truetype');
+}
+
+@font-face {
+  font-family: 'THSarabunNew';
+  font-style: normal;
+  font-weight: normal;
+  src: url("{{asset('fonts/THSarabunNew/THSarabunNew.ttf')}}") format('truetype');
+}
+
+@font-face {
+  font-family: 'THSarabunNew';
+  font-style: normal;
+  font-weight: bold;
+  src: url("{{asset('fonts/THSarabunNew/THSarabunNew Bold.ttf')}}") format('truetype');
+}
+
+body,td,tr,th,h4 {
+  font-family : 'THSarabunNew'
+}
 </style>
 </head>
 <body>
