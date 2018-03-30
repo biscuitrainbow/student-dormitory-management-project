@@ -19,6 +19,9 @@ class CreateTableDormitory extends Migration
             $table->string('last_name');
             $table->string('username');
             $table->string('password');
+            $table->rememberToken();
+
+         
             $table->timestamps();
         });
 
@@ -26,6 +29,7 @@ class CreateTableDormitory extends Migration
             $table->increments('id');
             $table->string('building');
             $table->string('number');
+            $table->string('furniture');
             $table->string('status');
             $table->timestamps();
         });
@@ -35,9 +39,12 @@ class CreateTableDormitory extends Migration
             $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
+            $table->string('id_card');
             $table->string('address');
             $table->string('telephone');
             $table->string('e_mail');
+            $table->string('document');
+            $table->string('status');
             $table->timestamps();
         });
 
@@ -58,37 +65,36 @@ class CreateTableDormitory extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->increments('id');
             $table->float('room_price');
-            $table->integer('net_price');
+            $table->integer('internet_price');
+            $table->integer('last_water_unit');
             $table->integer('water_unit');
+            $table->integer('last_electricity_unit');
             $table->integer('electricity_unit');
-            
             $table->float('total');
+            $table->string('status');
 
             $table->integer('room_id')->unsigned();
-
             $table->foreign('room_id')->references('id')->on('rooms');
 
             $table->integer('customer_id')->unsigned();
-
             $table->foreign('customer_id')->references('id')->on('customers');
             $table->timestamps();
         });
 
-        Schema::create('contacts', function (Blueprint $table) {
+        Schema::create('contracts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('earnest_money');
             $table->string('insurer_money');
             $table->timestamp('start')->nullable();
             $table->timestamp('end')->nullable();
-            $table->string('status');
             $table->string('witness_name');
+            $table->string('document');
+            $table->string('status');
 
             $table->integer('room_id')->unsigned();
-
             $table->foreign('room_id')->references('id')->on('rooms');
 
             $table->integer('customer_id')->unsigned();
-
             $table->foreign('customer_id')->references('id')->on('customers');
             
             $table->timestamps();

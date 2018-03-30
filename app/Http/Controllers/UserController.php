@@ -37,13 +37,40 @@ class UserController extends Controller
         return view('signup');
     }
 
-    public function store(){
-        User::create([
-            'name' => request()->f_name,
-            'lastname' => request()->l_name,
+    public function delete(User $user){
+        $user->delete();
+        return redirect('/user/index');
+        
+    }
+
+
+    public function edit(User $user){
+        return view('user-edit',compact('user'));   
+    }
+
+    
+
+    public function update(User $user){
+        $user->update([
+            'first_name' => request()->first_name,
+            'last_name' => request()->last_name,
             'username'=>request()->username,
-            'password' => bcrypt(request()->password),
         ]);
-        return redirect('\login');
+        return redirect('/user/index');
+    }
+    
+    public function create(){
+        return view('user-create');
+    }
+
+    public function store(){
+     User::create([
+            'first_name' => request()->first_name,
+            'last_name' => request()->last_name,
+            'username' => request()->username,
+            'password'=> bcrypt(request()->pass),
+        ]);
+
+        return redirect('/user/index');
     }
 }

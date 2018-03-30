@@ -1,37 +1,53 @@
 @extends('layout')
 @section('content')
-<h2>INVOICE</h2>
+<form action="/maintenance/index">
+  <input class="form-control form-control-dark w-100" type="text" name="query" placeholder="Search" aria-label="Search">
+</form>
+<h2>INVOICES</h2><br>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Price</th>
-                  <th>Water_unit</th>
-                  <th>Electric_unit</th>
-                  <th>Internet</th>
-                  <th>Total</th>
                   <th>Room</th>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
-				  <th>Manage</th>
+                  <th>Name</th>
+                  <th>Room price</th>
+                  <th>Internetet price</th>
+                  <th>Last mount water</th>
+                  <th>Water unit</th>
+                  <th>Last mount electric</th>
+                  <th>Electric unit</th>
+                  <th>Total price</th>
+                  <th>Status</th>
+				          <th>Manage</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach($invoices as $invoice)
                 <tr>
-                  <td>{{$invoice->id}}</td>
-                  <td>{{$invoice->price}}</td>
+                  <td>{{$loop->iteration}}</td>
+                  <td>{{$invoice->room->building .' '. $invoice->room->number}}</td>
+                  <td>{{$invoice->customer->first_name . ' ' . $invoice->customer->last_name}}</td>
+                  <td>{{$invoice->room_price}}</td>
+                  <td>{{$invoice->internet_price}}</td>
+                  <td>{{$invoice->last_water_unit}}</td>
                   <td>{{$invoice->water_unit}}</td>
+                  <td>{{$invoice->last_electricity_unit}}</td>
                   <td>{{$invoice->electricity_unit}}</td>
-                  <td>{{$invoice->internet}}</td>
                   <td>{{$invoice->total}}</td>
-                  <td>{{$invoice->room->number}}</td>
-                  <td>{{$invoice->customer->name}}</td>
-                  <td>{{$invoice->customer->lastname}}</td>
+                  @if($invoice->status == 'Paid')
+                  <td><h5><span class="badge badge-success">{{$invoice->status}}</span></h5></td>   
+                  @else 
+                  <td><h5><span class="badge badge-danger">{{$invoice->status}}</span></h5></td>   
+                  @endif
+
                      
-				  <td><a href="/invoices/{{$invoice->id}}/edit" class="btn btn-warning">Edit</a>
-              <a href="/invoices/delete/{{$invoice->id}}" class="btn btn-danger">Delete</a></td>
+				      <td>
+              <div class="btn-group" role="group" aria-label="Basic example">
+              <a href="/invoices/{{$invoice->id}}/edit" class="btn btn-warning">EDIT</a>
+              <a href="/invoices/delete/{{$invoice->id}}" class="btn btn-danger">DELETE</a>
+              <a href="/invoices/pdf/{{$invoice->id}}" class="btn btn-primary">PDF</a></div>
+              </td>
                 </tr>
                 @endforeach
                 
@@ -41,10 +57,11 @@
         
 				
             </table>
+            <br>
 				<div class="col-xs-12 text-center">
           
             <a href="/invoices/create">
-            <button class="btn btn-success">Add Room</button>
+            <button class="btn btn-success">Add invoice</button>
             </a>
           
         </div>

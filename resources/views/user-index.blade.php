@@ -1,13 +1,13 @@
 @extends('layout')
 @section('content')
-<h2>USER</h2>
+<h2>USERS</h2><br>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Name</th>
-                  <th>Lastname</th>
+                  <th>First name</th>
+                  <th>Last name</th>
                   <th>Username</th>
                   <th>Manage</th>
                 </tr>
@@ -16,11 +16,13 @@
                 @foreach($users as $user)                
                 <tr>
                   <td>{{$user->id}}</td>
-                  <td>{{$user->name}}</td>
-                  <td>{{$user->lastname}}</td>
+                  <td>{{$user->first_name}}</td>
+                  <td>{{$user->last_name}}</td>
                   <td>{{$user->username}}</td>
-				  <td><a href="" class="btn btn-warning">Edit</a>
-                  <a href="/room/delete/" class="btn btn-danger">Delete</a></td>
+				  <td> 
+                  <div class="btn-group" role="group" aria-label="Basic example">   
+                  <a href="/user/edit/{{$user->id}}" class="btn btn-warning">EDIT</a>
+                  <a href="/user/delete/{{$user->id}}" class="btn btn-danger">DELETE</a></div></td>
                 </tr>
                 @endforeach
                 
@@ -29,14 +31,15 @@
 				<div class="row">
         
 				
-            </table>
-				<div class="col-xs-12 text-center">
-          
-            <a href="/room/create">
-            <button class="btn btn-success">Add Room</button>
-            </a>
-          
-        </div>
+        </table>
+        <br>
+        <div class="col-xs-12 text-center">
+        <a href="/user/create">
+        <button class="btn btn-success">Add user</button>
+        </a>
+      
+    </div>
+			
       </div>
           </div>
 @endsection

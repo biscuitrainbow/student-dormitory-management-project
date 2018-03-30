@@ -6,7 +6,7 @@ use App\Invoice;
 use App\Room;
 use App\Customer;
 use Illuminate\Http\Request;
-
+use  Barryvdh\DomPDF\Facade as PDF;
 class InvoiceController extends Controller
 {
     /**
@@ -41,13 +41,21 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        $total = request()->price + request()->water_unit + request()->electricity_unit +  request()->internet;
+
+        
+        $water = request()->water_unit - request()->lastw;
+        $electricity = request()->electricity_unit - request()->laste;
+        $total = request()->room_price + $water*17 + $electricity*8 +  request()->internet;
+
         Invoice::create([
-            'price' => request()->price,
+            'room_price' => request()->room_price,
+            'last_water_unit' => request()->lastw,
             'water_unit' => request()->water_unit,
+            'last_electricity_unit' => request()->laste,
             'electricity_unit'=>request()->electricity_unit,
-            'internet'=>request()->internet,
+            'internet_price'=>request()->internet,
             'total' => $total,
+            'status'=>'unpaid',
             'room_id'=>request()->room,
             'customer_id'=>request()->customer,    
         ]);
@@ -88,15 +96,22 @@ class InvoiceController extends Controller
      */
     public function update(Request $request, Invoice $invoice)
     {
-        $total = request()->price + request()->water_unit + request()->electricity_unit +  request()->internet;
-        $invoice->update([
-            'price' => request()->price,
-            'water_unit' => request()->water_unit,
-            'electricity_unit'=>request()->electricity_unit,
-            'internet'=>request()->internet,
-            'total' => $total,
-            'room_id'=>request()->room,
-            'customer_id'=>request()->customer,    
+
+        $water = request()->water_unit - request()->lastw;
+        $electricity = request()->electricity_unit - request()->laste;
+        $total = request()->room_price + $water*17 + $electricity*8 +  request()->internet;
+     
+     $invoice->update([
+        'room_price' => request()->room_price,
+        'last_water_unit' => request()->lastw,
+        'water_unit' => request()->water_unit,
+        'last_electricity_unit' => request()->laste,
+        'electricity_unit'=>request()->electricity_unit,
+        'internet_price'=>request()->internet,
+        'total' => $total,
+        'status'=>'Unpaid',
+        'room_id'=>request()->room,
+        'customer_id'=>request()->customer,       
         ]);
 
         return redirect('/invoices');
@@ -113,5 +128,12 @@ class InvoiceController extends Controller
         $invoice->delete();
         return redirect('/invoices');
 
+    }
+
+    public function pdf(Invoice $invoice){
+        //return view('invoice-pdf',compact('invoice'));
+
+        $pdf = PDF::loadView('invoice-pdf',compact('invoice'));
+        return $pdf->download('invoice.pdf');
     }
 }
