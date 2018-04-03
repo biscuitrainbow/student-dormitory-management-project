@@ -49,7 +49,7 @@ Route::get('/login', 'UserController@login')->name('login');
 Route::post('/login', 'UserController@authenticate');
 Route::get('/logout', 'UserController@logout')->middleware('auth');
 
-Route::get('/signup','UserController@signup');
+// Route::get('/signup','UserController@signup');
 Route::get('/signup', 'UserController@create');
 Route::post('/signup', 'UserController@store');
 

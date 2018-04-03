@@ -14,11 +14,30 @@ class InvoiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $invoices = Invoice::all();
-        return view('invoice-index',compact('invoices'));
-        
+    
+    public function index(){
+             if(request()->has('query') && request()->filled('query')){
+                
+                $invoices = Invoice::whereHas('room',function($query){
+                    $query->where('building',request('query'));
+                })
+                ->orWhereHas('room',function($query){
+                    $query->where('number',request('query'));
+                })
+                ->orWhereHas('customer',function($query){
+                    $query->where('first_name','like','%'.request('query').'%');
+                })
+                ->orWhereHas('customer',function($query){
+                    $query->where('last_name','like','%'.request('query').'%');
+                })
+                
+                ->orWhere('status',request('query'))
+                ->get();
+    }else {
+        $invoices = Invoice::with('room','customer')->get();
+       }
+
+       return view('invoice-index',compact('invoices'));
     }
 
     /**
@@ -55,7 +74,7 @@ class InvoiceController extends Controller
             'electricity_unit'=>request()->electricity_unit,
             'internet_price'=>request()->internet,
             'total' => $total,
-            'status'=>'unpaid',
+            'status'=>'ค้างชำระ',
             'room_id'=>request()->room,
             'customer_id'=>request()->customer,    
         ]);
@@ -109,7 +128,7 @@ class InvoiceController extends Controller
         'electricity_unit'=>request()->electricity_unit,
         'internet_price'=>request()->internet,
         'total' => $total,
-        'status'=>'Unpaid',
+        'status'=>request()->status,
         'room_id'=>request()->room,
         'customer_id'=>request()->customer,       
         ]);

@@ -10,8 +10,27 @@ use App\Customer;
 class MaintenanceController extends Controller
 {
     public function index(){
+            if(request()->has('query') && request()->filled('query')){
+                
+                $maintenances = Maintenance::whereHas('customer',function($query){
+                    $query->where('telephone','like','%'.request('query').'%');
+                })
+
+                ->orWhereHas('room',function($query){
+                    $query->where('building',request('query'));
+                })
+                ->orWhereHas('room',function($query){
+                    $query->where('number',request('query'));
+                })
+                ->orWhere('name','like','%'.request('query').'%')
+                ->orWhere('created_at',request('query'))
+                ->orWhere('status',request('query'))
+                ->get();
+    }else {
         $maintenances = Maintenance::with('room','customer')->get();
-        return view('maintenance-index',compact('maintenances'));
+       }
+
+       return view('maintenance-index',compact('maintenances'));
     }
 
     public function create(){
@@ -23,7 +42,7 @@ class MaintenanceController extends Controller
     public function store(){
         Maintenance::create([
             'name' => request()->name,
-            'status'=>'Not finished',
+            'status'=>'รอดำเนินการ',
             'room_id'=>request()->room,
             'customer_id'=>request()->customer,  
         

@@ -86,13 +86,13 @@ body {
       <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">LOGIN</h1>
       
-      <input type="text" name="username" id="inputusername" class="form-control" placeholder="Username" required autofocus>
+      <input type="text" name="username" id="inputusername" class="form-control" placeholder="Username ไม่เกิน 9 ตัวอักษร" required autofocus>
       
-      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password no more 9 number" required>
+      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password ไม่เกิน 9 ตัวเลข" required>
       
     
       <button class="btn btn-lg btn-primary btn-block" type="submit">LOGIN</button><br>
-      Don't have an account ? <a href="/signup">SIGN UP</a>
+      ยังไม่มี account ใช่หรือไม่ ? <a href="/signup">SIGN UP</a>
       <p class="mt-5 mb-3 text-muted">&copy; 2018</p>
     </form>
   </body>

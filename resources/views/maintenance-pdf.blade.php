@@ -17,22 +17,46 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+@font-face {
+  font-family: 'THSarabunNew';
+  font-style: normal;
+  font-weight: normal;
+  src: url("{{asset('fonts/THSarabunNew/THSarabunNew.ttf')}}") format('truetype');
+}
+
+@font-face {
+  font-family: 'THSarabunNew';
+  font-style: normal;
+  font-weight: normal;
+  src: url("{{asset('fonts/THSarabunNew/THSarabunNew.ttf')}}") format('truetype');
+}
+
+@font-face {
+  font-family: 'THSarabunNew';
+  font-style: normal;
+  font-weight: bold;
+  src: url("{{asset('fonts/THSarabunNew/THSarabunNew Bold.ttf')}}") format('truetype');
+}
+
+body,td,tr,th,h4 {
+  font-family : 'THSarabunNew'
+}
 </style>
 </head>
 <body>
 
-<h2>All Maintnance</h2>
+<h2>ข้อมูลการแจ้งซ่อม</h2>
 
 <table >
 <thead>
 <tr>
 <th>#</th>
-<th>Name</th>
-<th>Buide</th>
-<th>Number</th>
-<th>Tel</th>
-<th>Create Date</th>
-<th>Status</th>
+<th>รายการ</th>
+<th>อาคาร</th>
+<th>เลขห้อง</th>
+<th>เบอร์ติดต่อ</th>
+<th>วันแจ้งซ่อม</th>
+<th>สถานะ</th>
 </tr>
                 @foreach($maintenances as $maintenance)
                 <tr>

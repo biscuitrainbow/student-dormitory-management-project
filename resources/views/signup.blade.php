@@ -29,7 +29,7 @@
     <div class="container-fluid">
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h2>PUWARIN HOME</h2>
+        <h2>หอพักบ้านภูวรินทร์</h2>
         
       </div>
 
@@ -45,15 +45,15 @@
 
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="firstName">First name</label>
-                <input type="text" class="form-control" name="first_name" id="firstName" placeholder="First name" value="" required>
+                <label for="firstName">ชื่อ</label>
+                <input type="text" class="form-control" name="first_name" id="firstName" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
-                <label for="lastName">Last name</label>
-                <input type="text" class="form-control" name="last_name" id="lastName" placeholder="Last name" value="" required>
+                <label for="lastName">นามสกุล</label>
+                <input type="text" class="form-control" name="last_name" id="lastName" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid last name is required.
                 </div>
@@ -66,7 +66,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">@</span>
                 </div>
-                <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+                <input type="text" class="form-control" name="username" id="username" placeholder="Username ไม่เกิน 9 ตัวอักษร" required>
                 <div class="invalid-feedback" style="width: 100%;">
                   Your username is required.
                 </div>
@@ -75,15 +75,15 @@
 
             <div class="mb-3">
               <label for="address">Password</label>
-              <input type="text" class="form-control" name="pass" id="password" placeholder="Password no more 9 number" required>
+              <input type="text" class="form-control" name="pass" id="password" placeholder="Password ไม่เกิน 9 ตัวเลข" required>
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>
             </div>
             <div class="col-xs-12 text-center">
             <hr class="mb-4">
-            <button type="submit" class="btn btn-primary"> Continue to sign up</button>
-            <a href="/login" class="btn btn-secondary">BACK</a>
+            <button type="submit" class="btn btn-primary">สมัค account ผู้ใช้</button>
+            <a href="/login" class="btn btn-secondary">กลับ</a>
             </div>
           </form>
         </div>
@@ -92,7 +92,7 @@
       </div>
 
       <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 2018 Puwarin house</p>
+        <p class="mb-1">&copy; 2018 หอพักบ้านภูวรินทร์</p>
         
       </footer>
     </div>

@@ -46,20 +46,20 @@ body,td,tr,th,h4 {
 </head>
 <body>
 
-<h2>All Room</h2>
+<h2>ข้อมูลห้องพัก</h2>
 
 <table>
 <thead>
                 <tr>
                   <th>#</th>
-                  <th>Building</th>
-                  <th>Number</th>
-                  <th>Furniture</th>
-                  <th>Status</th>
+                  <th>อาคาร</th>
+                  <th>เลขห้อง</th>
+                  <th>เฟอร์นิเจอร์</th>
+                  <th>สถานะ</th>
                 </tr>
                 @foreach($rooms as $room)
                 <tr>
-                  <td>{{$room->id}}</td>
+                  <td>{{$loop->iteration}}</td>
                   <td>{{$room->building}}</td>
                   <td>{{$room->number}}</td>
                   <td>{{$room->furniture}}</td>

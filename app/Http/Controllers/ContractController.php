@@ -26,8 +26,8 @@ class ContractController extends Controller
             })
             ->orWhere('start',request('query'))
             ->orWhere('end',request('query'))
-            ->orWhere('witness_name',request('query'))
-            ->orWhere('status','like','%'.request('query').'%')
+            ->orWhere('witness_name','like','%'.request('query').'%')
+            ->orWhere('status',request('query'))
             ->get();
            }else {
             $contracts = Contract::with('room','customer')->get();
@@ -51,7 +51,7 @@ class ContractController extends Controller
             'end' => request()->end,
             'witness_name' => request()->witness,
             'document' => $path,
-            'status'=>'None termination',
+            'status'=>'มีสัญญา',
             'room_id'=>request()->room,
             'customer_id'=>request()->customer,  
         

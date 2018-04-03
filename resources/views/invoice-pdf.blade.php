@@ -95,6 +95,30 @@
     .rtl table tr td:nth-child(2) {
         text-align: left;
     }
+@font-face {
+  font-family: 'THSarabunNew';
+  font-style: normal;
+  font-weight: normal;
+  src: url("{{asset('fonts/THSarabunNew/THSarabunNew.ttf')}}") format('truetype');
+}
+
+@font-face {
+  font-family: 'THSarabunNew';
+  font-style: normal;
+  font-weight: normal;
+  src: url("{{asset('fonts/THSarabunNew/THSarabunNew.ttf')}}") format('truetype');
+}
+
+@font-face {
+  font-family: 'THSarabunNew';
+  font-style: normal;
+  font-weight: bold;
+  src: url("{{asset('fonts/THSarabunNew/THSarabunNew Bold.ttf')}}") format('truetype');
+}
+
+body,td,tr,th,h4 {
+  font-family : 'THSarabunNew'
+}
     </style>
 </head>
 
@@ -110,8 +134,8 @@
                             </td>
                             
                             <td>
-                                Invoice #: {{$invoice->id}}<br>
-                                Created: {{$invoice->created_at->toFormattedDateString()}}
+                                รหัสใบเสร็จ : {{$invoice->id}}<br>
+                                วันออกใบเสร็จ : {{$invoice->created_at->toFormattedDateString()}}
                                 
                             </td>
                         </tr>
@@ -140,17 +164,17 @@
             
             <tr class="heading">
                 <td>
-                    Item
+                    รายการ
                 </td>
                 
                 <td>
-                    Price
+                    ราคา
                 </td>
             </tr>
             
             <tr class="item">
                 <td>
-                    Room price
+                    ค่าห้อง
                 </td>
                 
                 <td>
@@ -160,7 +184,7 @@
             
             <tr class="item">
                 <td>
-                    Net price
+                    ค่าอินเตอร์เน็ต
                 </td>
                 
                 <td>
@@ -170,7 +194,7 @@
             
             <tr class="item">
                 <td>
-                    Water unit (17 bath/unit)
+                    ยูนิตค่าน้ำ (17 บาท/ยูนิต)
                 </td>
                 
                 <td>
@@ -180,7 +204,7 @@
 
             <tr class="item last">
                 <td>
-                    Electricity unit (8 bath/unit)
+                    ยูนิตค่าไฟฟ้า (8 บาท/ยูนิต)
                 </td>
                 
                 <td>

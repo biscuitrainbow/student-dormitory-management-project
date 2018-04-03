@@ -11,7 +11,7 @@
               <span class="text-5xl">{{$available_number}}</span>
             </div>
             <div class="text-sm uppercase text-grey tracking-wide"><a href="/room/index/">
-              Room empty number</a>
+              จำนวนห้องว่างทั้งหมด</a>
             </div>
           </div>
         </div>
@@ -21,7 +21,7 @@
               <span class="text-5xl">{{$customer_number}}</span>
             </div>
             <div class="text-sm uppercase text-grey tracking-wide"><a href="/customer/index/">
-              All renter number</a>
+              จำนวนผู้เช่าทั้งหมด</a>
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@
               <span class="text-5xl">{{$maintenance_number}}</span>
             </div>
             <div class="text-sm uppercase text-grey tracking-wide"><a href="/maintenance/index/">
-              Have not maintenance number</a>
+              จำนวนค้างซ่อมทั้งหมด</a>
             </div>
           </div>
         </div>
@@ -41,22 +41,22 @@
               <span class="text-5xl">{{$invoice_number}}</span>
             </div>
             <div class="text-sm uppercase text-grey tracking-wide"><a href="/invoices">
-              Unpaid number</a>
+              จำนวนค้างชำระทั้งหมด</a>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="flex flex-col"><br>
-      <h3>Room - Available</h3><br>
+      <h3>รายการห้องว่าง</h3><br>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
               <th>#</th>
-              <th>Building</th>
-              <th>Number</th>
-              <th>Furniture</th>
+              <th>อาคาร</th>
+              <th>เลขห้อง</th>
+              <th>เฟอรืนิเจอร์</th>
             </tr>
           </thead>
           <tbody>
@@ -72,17 +72,17 @@
         </table>
       </div><br>
       
-      <h3>Maintenance - Not finished</h3><br>
+      <h3>รายการแจ้งซ่อม</h3><br>
       <div class="table-responsive">
           <table class="table table-striped table-sm">
             <thead>
               <tr>
                 <th>#</th>
-                <th>Namet</th>
-                <th>Building</th>
-                <th>Number</th>
-                <th>Telephone</th>
-                <th>Date</th>
+                <th>รายการ</th>
+                <th>อาคาร</th>
+                <th>เลขห้อง</th>
+                <th>เบอร์ติดต่อ</th>
+                <th>วันแจ้งซ่อม</th>
               </tr>
             </thead>
             <tbody>
@@ -99,21 +99,21 @@
           </table>
         </div><br>
 
-        <h3>Invoice - Unpaid</h3><br>
+        <h3>รายการค้างชำระ</h3><br>
         <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Room</th>
-                  <th>Name</th>
-                  <th>Room_price</th>
-                  <th>Internet_price</th>
-                  <th>last_water_unit</th>
-                  <th>Water_unit</th>
-                  <th>Last_electricity_unit</th>
-                  <th>Electricity_unit</th>
-                  <th>Total_price</th>
+                  <th>ห้อง</th>
+                  <th>ชื่อ - สกุล</th>
+                  <th>ค่าห้อง</th>
+                  <th>ค่าอินเตอร์เน็ต</th>
+                  <th>ยูนิตน้ำเดือนก่อน</th>
+                  <th>ยูนิตน้ำ</th>
+                  <th>ยูนิตไฟเดือนก่อน</th>
+                  <th>ยูนิตค่าไฟ</th>
+                  <th>ค่าเช่าสุทธิ</th>
                   </tr>
               </thead>
               <tbody>

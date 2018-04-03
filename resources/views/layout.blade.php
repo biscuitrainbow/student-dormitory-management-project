@@ -46,43 +46,43 @@
               <li class="nav-item">
               <a class="nav-link " href="/dashboard">
               <span data-feather="bar-chart-2"></span>
-              &nbsp;Dashboard <span class="sr-only">(current)</span>
+              &nbsp;แผงควบคุมข้อมูล <span class="sr-only"></span>
               </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/user/index">
                   <span data-feather="user"></span>
-                  &nbsp;User 
+                  &nbsp;ข้อมูลผู้ใช้ 
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active " href="/room/index">
                   <span data-feather="home"></span>
-                  &nbsp;Room
+                  &nbsp;ข้อมูห้องพัก
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="/customer/index">
                   <span data-feather="users"></span>
-                  &nbsp;Renter
+                  &nbsp;ข้อมูลผู้เช่า
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/contract/index">
                   <span data-feather="tag"></span>
-                  &nbsp;Contract
+                  &nbsp;ข้อมูลสัญญาผู้เช่า
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/maintenance/index">
                   <span data-feather="alert-triangle"></span>
-                  &nbsp;Maintenance
+                  &nbsp;ข้อมูลการแจ้งซ่อม
                 </a>
               </li>
 				<li class="nav-item">
                 <a class="nav-link" href="/invoices">
                   <span data-feather="file-text"></span>
-                  &nbsp;Invoice
+                  &nbsp;ข้อมูลการชำระ
                 </a>
               </li>
               <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
@@ -92,7 +92,7 @@
           <li class="nav-item text-nowrap">
           <a class="nav-link" href="/logout">
           <span data-feather="log-out"></span>
-          &nbsp;Signout</a>
+          &nbsp;ออกจากระบบ</a>
         </li>
             </ul>
         </div>

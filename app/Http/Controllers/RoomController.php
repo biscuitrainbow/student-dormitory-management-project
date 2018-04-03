@@ -28,8 +28,8 @@ class RoomController extends Controller
         Room::create([
             'building' => request()->build,
             'number' => request()->number,
-            'furniture'=>'Bed ,Wardrobe ,Vanity ,Water heater ,Fan ,Air conditioner',
-            'status'=>'Available'
+            'furniture'=>'เตียง,ตู้เสื้อผ้า,โต๊ะเครื่องแป้ง,เครื่องทำน้ำอุ่น,พัดลม,เครื่องปรับอากาศ',
+            'status'=>'ว่าง'
         ]);
 
         return redirect('/room/index');

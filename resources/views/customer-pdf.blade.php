@@ -17,23 +17,47 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+@font-face {
+  font-family: 'THSarabunNew';
+  font-style: normal;
+  font-weight: normal;
+  src: url("{{asset('fonts/THSarabunNew/THSarabunNew.ttf')}}") format('truetype');
+}
+
+@font-face {
+  font-family: 'THSarabunNew';
+  font-style: normal;
+  font-weight: normal;
+  src: url("{{asset('fonts/THSarabunNew/THSarabunNew.ttf')}}") format('truetype');
+}
+
+@font-face {
+  font-family: 'THSarabunNew';
+  font-style: normal;
+  font-weight: bold;
+  src: url("{{asset('fonts/THSarabunNew/THSarabunNew Bold.ttf')}}") format('truetype');
+}
+
+body,td,tr,th,h4 {
+  font-family : 'THSarabunNew'
+}
 </style>
 </head>
 <body>
 
-<h2>All Customer</h2>
+<h2>ข้อมูลผู้เช่า</h2>
 
 <table>
 <thead>
 <tr>
 <th>#</th>
-<th>First Name</th>
-<th>Last name</th>
-<th>ID Card</th>
-<th>Address</th>
-<th>Telephone</th>
-<th>Email</th>
-<th>Status</th> 
+<th>ชื่อ</th>
+<th>นามสกุล</th>
+<th>รหัสบัตรประชาชน</th>
+<th>ที่อยู่</th>
+<th>เบอร์ติดต่อ</th>
+<th>อีเมล</th>
+<th>สถานะ</th> 
 </tr>
                 @foreach($customers as $customer)
                 <tr>

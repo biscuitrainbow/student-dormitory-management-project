@@ -17,6 +17,30 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+@font-face {
+  font-family: 'THSarabunNew';
+  font-style: normal;
+  font-weight: normal;
+  src: url("{{asset('fonts/THSarabunNew/THSarabunNew.ttf')}}") format('truetype');
+}
+
+@font-face {
+  font-family: 'THSarabunNew';
+  font-style: normal;
+  font-weight: normal;
+  src: url("{{asset('fonts/THSarabunNew/THSarabunNew.ttf')}}") format('truetype');
+}
+
+@font-face {
+  font-family: 'THSarabunNew';
+  font-style: normal;
+  font-weight: bold;
+  src: url("{{asset('fonts/THSarabunNew/THSarabunNew Bold.ttf')}}") format('truetype');
+}
+
+body,td,tr,th,h4 {
+  font-family : 'THSarabunNew'
+}
 </style>
 </head>
 <body>
@@ -27,18 +51,18 @@ tr:nth-child(even) {
 <thead>
                 <tr>
                 <th>#</th>
-                <th>Name</th>
-                <th>Room</th>
-                <th>Earnest_money</th>
-                <th>Insurer_money</th>
-                <th>Start_date</th>
-                <th>End_date</th>
-                <th>Witness_name</th>
-                <th>Status</th>
+                <th>ชื่อ -สกุล</th>
+                <th>ห้อง</th>
+                <th>ค่ามัดจำ</th>
+                <th>ค่าประกัน</th>
+                <th>เริ่มสัญญา</th>
+                <th>หมดสัญญา</th>
+                <th>ชื่อผู้เช่าร่วม</th>
+                <th>สถานะ</th>
                 </tr>
                 @foreach($contracts as $contract)
                 <tr>
-                <td>{{$contract->id}}</td>
+                <td>{{$loop->iteration}}</td>
                 <td>{{$contract->customer->first_name . ' ' . $contract->customer->last_name}}</td>
                 <td>{{$contract->room->building .' '. $contract->room->number}}</td>
                 <td>{{$contract->earnest_money}}</td>

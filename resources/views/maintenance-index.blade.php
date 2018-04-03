@@ -1,10 +1,10 @@
 @extends('layout')
 @section('content')
 <form action="/maintenance/index">
-  <input class="form-control form-control-dark w-100" type="text" name="query" placeholder="Search" aria-label="Search">
+  <input class="form-control form-control-dark w-100" type="text" name="query" placeholder="ค้นหา" aria-label="Search">
 </form>
 <div style="display:flex; justify-content:space-between">
-<h2>MAINTENANCES</h2>
+<h2>ข้อมูลการแจ้งซ่อม</h2>
 <a href="/maintenance/pdf">
     <button type="submit" class="btn btn-primary">PDF</button>
   </a>
@@ -15,13 +15,13 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Name</th>
-                  <th>Buide</th>
-                  <th>Number</th>
-                  <th>Tel</th>
-                  <th>Create Date</th>
-                  <th>Status</th>
-                  <th>Manage</th>
+                  <th>รายการ</th>
+                  <th>อาคาร</th>
+                  <th>เลขห้อง</th>
+                  <th>เบอร์ติดต่อ</th>
+                  <th>วันแจ้งซ่อม</th>
+                  <th>สถานะ</th>
+                  <th>จัดการข้อมูล</th>
                 </tr>
               </thead>
               <tbody>
@@ -33,7 +33,7 @@
                   <td>{{$maintenance->room->number}}</td>
                   <td>{{$maintenance->customer->telephone}}</td>
                   <td>{{date('d-m-Y', strtotime($maintenance->created_at))}}</td>
-                  @if($maintenance->status == 'Finished')
+                  @if($maintenance->status == 'เสร็จสิ้น')
                   <td><h5><span class="badge badge-success">{{$maintenance->status}}</span></h5></td>   
                   @else 
                   <td><h5><span class="badge badge-danger">{{$maintenance->status}}</span></h5></td>   
@@ -43,8 +43,8 @@
                  
 				      <td>
               <div class="btn-group" role="group" aria-label="Basic example">
-              <a href="/maintenance/edit/{{$maintenance->id}}" class="btn btn-warning">EDIT</a>
-              <a href="/maintenance/delete/{{$maintenance->id}}" class="btn btn-danger">DELETE</a></div></td>
+              <a href="/maintenance/edit/{{$maintenance->id}}" class="btn btn-warning">แก้ไข</a>
+              <a href="/maintenance/delete/{{$maintenance->id}}" class="btn btn-danger">ลบ</a></div></td>
                 </tr>
                 @endforeach
                 
@@ -58,7 +58,7 @@
 				<div class="col-xs-12 text-center">
           
             <a href="/maintenance/create">
-            <button class="btn btn-success">Add maintenance</button>
+            <button class="btn btn-success">เพิ่มข้อมูล</button>
             </a>
           
         </div>
