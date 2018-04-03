@@ -59,6 +59,7 @@
             <button class="btn btn-success">เพิ่มข้อมูล</button>
             </a>
         </div>
+        <br>
       </div>
           </div>
 @endsection

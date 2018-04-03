@@ -14,19 +14,19 @@
                   <label for="inputState">ห้อง</label>
                   <select id="inputState" class="form-control" name="room">
                         @foreach($rooms as $room)
-                        <option value="{{$room->id}}">{{$room->building . ' ' . $room->number}}</option>
+                        <option @if($room->id == $maintenance->room->id) {{"selected"}} @endif value="{{$room->id}}">{{$room->building . ' ' . $room->number}}</option>
                         @endforeach
                   </select>
                   <br>
                   <label for="name">เบอร์ติดต่อ</label>
                   <select id="inputState" class="form-control" name="customer">
                         @foreach($customers as $customer)
-                        <option value="{{$customer->id}}">{{$customer->telephone}}</option>
+                        <option @if($customer->id == $maintenance->customer->id) {{"selected"}} @endif value="{{$customer->id}}">{{$customer->telephone}}</option>
                         @endforeach
                   </select>
                   <br>
                   <label for="name">วันแจ้งซ่อม</label>
-                  <input type="text" class="form-control" name="end" id="name" placeholder="End date" required="" value="{{$maintenance->created_at}}">
+                  <input type="date" class="form-control" name="end" id="name" placeholder="End date" required="" value="{{$maintenance->created_at->toDateString()}}">
                   <br>
                   <p>สถานะ</p>
                    <div class="form-check">

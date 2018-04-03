@@ -9,16 +9,16 @@
                 {{csrf_field()}}
                   <div class="form-group">
                   <label for="inputState">ชื่อ - สกุล</label>
-                  <select id="inputState" class="form-control" name="customer">
+                  <select id="inputState" class="form-control" name="customer" >
                         @foreach($customers as $customer)
-                        <option value="{{$customer->id}}">{{$customer->first_name . ' ' . $customer->last_name}}</option>
+                        <option @if($customer->id == $contract->customer->id) {{"selected"}} @endif value="{{$customer->id}}">{{$customer->first_name . ' ' . $customer->last_name}}</option>
                         @endforeach
                   </select>
                   <br>
               <label for="inputState">ห้อง</label>
                   <select id="inputState" class="form-control" name="room">
                         @foreach($rooms as $room)
-                        <option value="{{$room->id}}">{{$room->building . ' ' . $room->number}}</option>
+                        <option @if($room->id == $contract->room->id) {{"selected"}} @endif value="{{$room->id}}">{{$room->building . ' ' . $room->number}}</option>
                         @endforeach
                   </select>
                   <br>

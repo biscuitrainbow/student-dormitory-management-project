@@ -12,20 +12,29 @@ class MaintenanceController extends Controller
     public function index(){
             if(request()->has('query') && request()->filled('query')){
                 
-                $maintenances = Maintenance::whereHas('customer',function($query){
+
+                return $maintenances = Maintenance::whereHas('room',function($query){
+                   // $query->where('number','101');
+                })->get();
+                /*
+                orWhereHas('customer',function($query){
                     $query->where('telephone','like','%'.request('query').'%');
                 })
-
-                ->orWhereHas('room',function($query){
-                    $query->where('building',request('query'));
+                */
+                /*
+                whereHas('room',function($query){
+                    $query->where('building','=',request('query'));
                 })
+                
                 ->orWhereHas('room',function($query){
                     $query->where('number',request('query'));
                 })
+                
                 ->orWhere('name','like','%'.request('query').'%')
-                ->orWhere('created_at',request('query'))
+                ->orWhere('created_at','like','%'.request('query').'%')
                 ->orWhere('status',request('query'))
-                ->get();
+                */
+               // ->get();
     }else {
         $maintenances = Maintenance::with('room','customer')->get();
        }

@@ -83,7 +83,7 @@ body {
     <body class="text-center">
     <form class="form-signin" action="/login" method="post">
        {{csrf_field()}}
-      <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <img class="mb-4" src="https://www.picz.in.th/images/2018/04/03/SyWBxP.png" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">LOGIN</h1>
       
       <input type="text" name="username" id="inputusername" class="form-control" placeholder="Username ไม่เกิน 9 ตัวอักษร" required autofocus>

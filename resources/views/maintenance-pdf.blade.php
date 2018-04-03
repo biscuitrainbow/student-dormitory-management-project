@@ -65,12 +65,13 @@ body,td,tr,th,h4 {
                   <td>{{$maintenance->room->building}}</td>
                   <td>{{$maintenance->room->number}}</td>
                   <td>{{$maintenance->customer->telephone}}</td>
-                  <td>{{$maintenance->created_at}}</td>
+                  <td>{{ date('d-m-Y', strtotime($maintenance->created_at))}}</td>
                   <td>{{$maintenance->status}}</td>
 				  
                 </tr>
                 @endforeach
-                
+
+               
         
 </table>
 

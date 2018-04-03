@@ -28,7 +28,7 @@
 
     <div class="container-fluid">
       <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <img class="d-block mx-auto mb-4" src="https://www.picz.in.th/images/2018/04/03/SyWBxP.png" alt="" width="72" height="72">
         <h2>หอพักบ้านภูวรินทร์</h2>
         
       </div>

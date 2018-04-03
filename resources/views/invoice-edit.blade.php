@@ -2,7 +2,7 @@
 @section('content')
 
 <h2>แก้ไขข้อมูลการชำระ</h2><br>
-          <div class="table-responsive">
+          <div class="">
             <table class="table table-striped table-sm">
               <thead>
                 <form action="/invoices/{{$invoice->id}}" method="post">
@@ -12,14 +12,14 @@
                   <label for="inputState">ชื่อ - นามสกุล</label>
                   <select id="inputState" class="form-control" name="customer">
                             @foreach($customers as $customer)
-                            <option value="{{$customer->id}}">{{$customer->first_name . ' ' . $customer->last_name}}</option>
+                            <option  @if($customer->id == $invoice->customer->id) {{"selected"}} @endif value="{{$customer->id}}">{{$customer->first_name . ' ' . $customer->last_name}}</option>
                             @endforeach 
                       </select>
                       <br>
                       <label for="inputState">ห้อง</label>
                       <select id="inputState" class="form-control" name="room">
                             @foreach($rooms as $room)
-                            <option value="{{$room->id}}">{{$room->building . ' ' . $room->number}}</option>
+                            <option @if($room->id == $invoice->room->id) {{"selected"}} @endif value="{{$room->id}}">{{$room->building . ' ' . $room->number}}</option>
                             @endforeach
                       </select>
                       <br>
@@ -29,18 +29,28 @@
                       <label for="name">ค่าอินเตอร์เน็ต</label>
                       <input type="text" class="form-control" name="internet" id="name" placeholder="Internet price" required="" value="{{$invoice->internet_price}}">
                       <br>
+                      <div class="form-row">
+                      <div class="form-group col-md-6">
                       <label for="name">ยูนิตน้ำเดือนก่อน</label>
                       <input type="text" class="form-control" name="lastw" id="name" placeholder="Last mount water unit" required="" value="{{$invoice->last_water_unit}}">
-                      <br>
+                      </div>
+                      <div class="form-group col-md-6">
                       <label for="name">ยูนิตน้ำ</label>
                       <input type="text" class="form-control" name="water_unit" id="name" placeholder="Water unit" required="" value="{{$invoice->water_unit}}">
-                      <br>
+                    </div>
+                  </div>
+                  <br>
+                      <div class="form-row">
+                      <div class="form-group col-md-6">
                       <label for="name">ยูนิตไฟเดือนก่อน</label>
                       <input type="text" class="form-control" name="laste" id="name" placeholder="Last mounte lectric unit" required="" value="{{$invoice->last_electricity_unit}}">
-                      <br>
+                      </div>
+                      <div class="form-group col-md-6">
                       <label for="name">ยูนิตไฟ</label>
                       <input type="text" class="form-control" name="electricity_unit" id="name" placeholder="Electric unit" required="" value="{{$invoice->electricity_unit}}">
-                      <br>
+                    </div>
+                  </div>
+                  <br>
                       <p>สถานะ</p>
                       <div class="form-check">
   <input class="form-check-input" type="radio" name="status" id="exampleRadios1" value="ชำระ"

@@ -11,10 +11,11 @@ class RoomController extends Controller
        if(request()->has('query') && request()->filled('query')){
         $rooms = Room::where('building',request('query'))
         ->orWhere('number',request('query'))
+        ->orWhere('furniture','like','%'.request('query').'%')
         ->orWhere('status',request('query'))
         ->get();
        }else {
-        $rooms = Room::with('maintenances')->get();
+        $rooms = Room::all();
        }
 
         return view('room-index',compact('rooms'));

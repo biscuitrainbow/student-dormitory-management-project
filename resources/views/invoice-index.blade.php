@@ -63,8 +63,8 @@
             <a href="/invoices/create">
             <button class="btn btn-success">เพิ่มข้อมูล</button>
             </a>
-          
-        </div>
+         </div>
+         <br>
       </div>
           </div>
 @endsection

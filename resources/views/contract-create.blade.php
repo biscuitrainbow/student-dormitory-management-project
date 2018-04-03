@@ -2,7 +2,7 @@
 @section('content')
 
 <h2>เพิ่มข้อมูลผู้เช่า</h2><br>
-          <div class="table-responsive">
+          <div class="">
             <table class="table table-striped table-sm">
               <thead>
                 <form action="/contract/create" method="post" enctype="multipart/form-data">
@@ -28,12 +28,17 @@
                       <label for="name">ค่าประกัน</label>
                       <input type="text" class="form-control" name="insurer" id="name" placeholder="" required="" value="">                  
                       <br>
+                      <div class="form-row">
+                      <div class="form-group col-md-6">
                       <label for="name">เริ่มสัญญา</label>
                       <input type="date" class="form-control" name="start" id="name" placeholder="" required="" value="">
-                      <br>
+                      </div>
+                      <div class="form-group col-md-6">
                       <label for="name">หมดสัญญา</label>
                       <input type="date" class="form-control" name="end" id="name" placeholder="" required="" value="">
-                      <br>
+                    </div>
+                  </div>
+                  <br>
                       <label for="name">ชื่อผู้เช่าร่วม</label>
                       <input type="text" class="form-control" name="witness" id="name" placeholder="" required="" value="">
                       <br>

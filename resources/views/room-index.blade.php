@@ -53,9 +53,9 @@
 				    <div class="col-xs-12 text-center">
             <a href="/room/create">
             <button class="btn btn-success">เพิ่มข้อมูล</button>
-            </a>
-          
+            </a>  
         </div>
+        <br>
       </div>
           </div>
 @endsection

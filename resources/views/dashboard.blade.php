@@ -5,7 +5,7 @@
   <div class="flex-grow container mx-auto sm:px-4 pt-6 pb-8">
     <div class="bg-white border-t border-b sm:border-l sm:border-r sm:rounded shadow mb-6">
       <div class="hidden lg:flex">
-        <div class="w-1/3 text-center py-8 bg-green-lighter">
+        <div class="w-1/3 text-center py-8">
           <div class="border-r">
             <div class="text-grey-darker mb-2">
               <span class="text-5xl">{{$available_number}}</span>
@@ -56,7 +56,7 @@
               <th>#</th>
               <th>อาคาร</th>
               <th>เลขห้อง</th>
-              <th>เฟอรืนิเจอร์</th>
+              <th>เฟอร์นิเจอร์</th>
             </tr>
           </thead>
           <tbody>

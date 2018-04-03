@@ -130,13 +130,16 @@ body,td,tr,th,h4 {
                     <table>
                         <tr>
                             <td class="title">
-                                <img src="https://www.sparksuite.com/images/logo.png" style="width:300px; max-width:300px;">
+                                <img src="https://www.picz.in.th/images/2018/04/03/SyhLae.jpg" style="width:300px; max-width:300px;">
                             </td>
                             
                             <td>
                                 รหัสใบเสร็จ : {{$invoice->id}}<br>
-                                วันออกใบเสร็จ : {{$invoice->created_at->toFormattedDateString()}}
+                                วันออกใบเสร็จ : {{date('d-m-Y', strtotime($invoice->created_at))}}
+
                                 
+                                
+                            
                             </td>
                         </tr>
                     </table>

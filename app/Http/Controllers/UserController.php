@@ -66,6 +66,9 @@ class UserController extends Controller
         ]);
         return redirect('/user/index');
     }
+   
+    
+    
 
     public function create()
     {

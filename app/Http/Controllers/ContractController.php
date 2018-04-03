@@ -24,8 +24,8 @@ class ContractController extends Controller
             ->orWhereHas('room',function($query){
                 $query->where('number',request('query'));
             })
-            ->orWhere('start',request('query'))
-            ->orWhere('end',request('query'))
+            ->orWhere('start','like','%'.request('query').'%')
+            ->orWhere('end','like','%'.request('query').'%')
             ->orWhere('witness_name','like','%'.request('query').'%')
             ->orWhere('status',request('query'))
             ->get();

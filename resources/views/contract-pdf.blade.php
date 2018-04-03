@@ -67,8 +67,8 @@ body,td,tr,th,h4 {
                 <td>{{$contract->room->building .' '. $contract->room->number}}</td>
                 <td>{{$contract->earnest_money}}</td>
                 <td>{{$contract->insurer_money}}</td>
-                <td>{{date('Y-m-d', strtotime($contract->start))}}</td>
-                <td>{{date('Y-m-d', strtotime($contract->end))}}</td>
+                <td>{{date('d-m-Y', strtotime($contract->start))}}</td>
+                <td>{{date('d-m-Y', strtotime($contract->end))}}</td>
                 <td>{{$contract->witness_name}}</td>
                 <td>{{$contract->status}} 
 				  

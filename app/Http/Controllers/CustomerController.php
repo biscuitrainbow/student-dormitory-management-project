@@ -40,7 +40,7 @@ class CustomerController extends Controller
             'telephone' => request()->tel,
             'e_mail' => request()->email,
             'document' => $path,
-            'status'=>'Currently'
+            'status'=>'อยู่ในระบบ'
         ]);
 
         return redirect('/customer/index');
