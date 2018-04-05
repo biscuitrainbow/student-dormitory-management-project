@@ -39,7 +39,7 @@
         </a>
       
     </div>
-			
+    <br>
       </div>
           </div>
 @endsection
