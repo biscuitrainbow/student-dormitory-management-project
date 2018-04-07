@@ -82,7 +82,7 @@
             </div>
             <div class="col-xs-12 text-center">
             <hr class="mb-4">
-            <button type="submit" class="btn btn-primary">สมัค account ผู้ใช้</button>
+            <button type="submit" class="btn btn-primary">สมัคร account ผู้ใช้</button>
             <a href="/login" class="btn btn-secondary">กลับ</a>
             </div>
           </form>
