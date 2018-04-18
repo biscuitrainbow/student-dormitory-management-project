@@ -27,7 +27,7 @@
               <tbody>
                 @foreach($maintenances as $maintenance)
                 <tr>
-                  <td>{{$maintenance->id}}</td>
+                  <td>{{$loop->iteration}}</td>
                   <td>{{$maintenance->name}}</td>
                   <td>{{$maintenance->room->building}}</td>
                   <td>{{$maintenance->room->number}}</td>
