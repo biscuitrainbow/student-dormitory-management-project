@@ -5,7 +5,7 @@
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
-                <form action="/room/edit/{{$room->id}}" method="post">
+                <form action="/room/edit/{{$room->id}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                   <div class="form-group"><form action="/room/create" method="post">
                       <label for="name">อาคาร</label>
@@ -17,6 +17,9 @@
                       <label for="name">เฟอร์นิเจอร์</label>
                       <input type="text" class="form-control" name="furniture" id="name" placeholder="เฟอร์นิเจอร์" required="" value="{{$room->furniture}}">
                       <br>
+                      รูปภาพห้อง -<a href="/storage/{{$room->document}}"> รูปภาพ</a> ->
+                      <input id="file" class="form-controler" name="document" type="file">
+                      <br><br>
                       <p>สถานะ</p>
                       <div class="form-check">
 
@@ -32,6 +35,13 @@
   @if($room->status == 'ไม่ว่าง') checked @endif >
   <label class="form-check-label" for="exampleRadios2">
     ไม่ว่าง
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="status" id="exampleRadios2" value="ชำรุด" 
+  @if($room->status == 'ชำรุด') checked @endif >
+  <label class="form-check-label" for="exampleRadios2">
+    ชำรุด
   </label>
 </div>
 </div>

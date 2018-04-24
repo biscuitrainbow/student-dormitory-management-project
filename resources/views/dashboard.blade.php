@@ -10,8 +10,8 @@
             <div class="text-grey-darker mb-2">
               <span class="text-5xl">{{$available_number}}</span>
             </div>
-            <div class="text-sm uppercase text-grey tracking-wide"><a href="/room/index/">
-              จำนวนห้องว่างทั้งหมด</a>
+            <div class="text-sm uppercase text-grey tracking-wide"><h4><a href="/room/index/">
+              จำนวนห้องว่างทั้งหมด</a></h4>
             </div>
           </div>
         </div>
@@ -20,8 +20,8 @@
             <div class="text-grey-darker mb-2">
               <span class="text-5xl">{{$customer_number}}</span>
             </div>
-            <div class="text-sm uppercase text-grey tracking-wide"><a href="/customer/index/">
-              จำนวนผู้เช่าทั้งหมด</a>
+            <div class="text-sm uppercase text-grey tracking-wide"><h4><a href="/customer/index/">
+              จำนวนผู้เช่าทั้งหมด</a></h4>
             </div>
           </div>
         </div>
@@ -30,8 +30,8 @@
             <div class="text-grey-darker mb-2">
               <span class="text-5xl">{{$maintenance_number}}</span>
             </div>
-            <div class="text-sm uppercase text-grey tracking-wide"><a href="/maintenance/index/">
-              จำนวนค้างซ่อมทั้งหมด</a>
+            <div class="text-sm uppercase text-grey tracking-wide"><h4><a href="/maintenance/index/">
+              จำนวนค้างซ่อมทั้งหมด</a></h4>
             </div>
           </div>
         </div>
@@ -40,15 +40,15 @@
             <div class="text-grey-darker mb-2">
               <span class="text-5xl">{{$invoice_number}}</span>
             </div>
-            <div class="text-sm uppercase text-grey tracking-wide"><a href="/invoices">
-              จำนวนค้างชำระทั้งหมด</a>
+            <div class="text-sm uppercase text-grey tracking-wide"><h4><a href="/invoices">
+              จำนวนค้างชำระทั้งหมด</a></h4>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="flex flex-col"><br>
-      <h3>รายการห้องว่าง</h3><br>
+      <h5>รายการห้องว่าง</h5><br>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -72,7 +72,7 @@
         </table>
       </div><br>
       
-      <h3>รายการแจ้งซ่อม</h3><br>
+      <h5>รายการแจ้งซ่อม</h5><br>
       <div class="table-responsive">
           <table class="table table-striped table-sm">
             <thead>
@@ -92,14 +92,14 @@
                 <td>{{$maintenance->name}}</td>
                 <td>{{$maintenance->room->building}}</td>
                 <td>{{$maintenance->room->number}}</td>
-                <td>{{$maintenance->customer->telephone}}</td>
+                <td>{{$maintenance->phone}}</td>
                 <td>{{date('d-m-Y', strtotime($maintenance->created_at))}}</td>
               @endforeach
             </tbody>
           </table>
         </div><br>
 
-        <h3>รายการค้างชำระ</h3><br>
+        <h5>รายการค้างชำระ</h5><br>
         <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>

@@ -27,9 +27,8 @@
                       <input type="text" class="form-control" name="email" id="name" placeholder="" required="" value="{{$customer->e_mail}}">
                       <br>
 
-                      สำเนาบัตรประชาชน <a href="/storage/{{$customer->document}}">Document</a><br>
-                      <label for="file">File</label>
-                     <input id="file" class="form-controler" name="document" type="file">
+                      สำเนาบัตรประชาชน -<a href="/storage/{{$customer->document}}"> สำเนาปัจจุบัน</a> ->
+                      <input id="file" class="form-controler" name="document" type="file">
                       <br><br>
                       <p>สถานะ</p>
                       <div class="form-check">

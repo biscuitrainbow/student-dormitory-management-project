@@ -19,6 +19,7 @@
                   <th>อาคาร</th>
                   <th>เลขห้อง</th>
                   <th>เฟอร์นิเจอร์</th>
+                  <th>รูปห้อง</th>
                   <th>สถานะ</th>
 				          <th>จัดการข้อมูล</th>
                 </tr>
@@ -30,6 +31,9 @@
                   <td>{{$room->building}}</td>
                   <td>{{$room->number}}</td>
                   <td>{{$room->furniture}}</td>
+                  <td>
+                    <a href="/storage/{{$room->document}}">สำเนา</a>
+                    </td>
 
                   @if($room->status == 'ว่าง')
                   <td><h5><span class="badge badge-success">{{$room->status}}</span></h5></td>   

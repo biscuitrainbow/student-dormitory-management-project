@@ -30,6 +30,7 @@ class CreateTableDormitory extends Migration
             $table->string('building');
             $table->string('number');
             $table->string('furniture');
+            $table->string('document');
             $table->string('status');
             $table->timestamps();
         });
@@ -52,6 +53,7 @@ class CreateTableDormitory extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('status');
+            $table->string('phone');
 
             $table->integer('room_id')->unsigned();
             $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade');

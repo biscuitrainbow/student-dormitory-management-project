@@ -19,11 +19,7 @@
                   </select>
                   <br>
                   <label for="name">เบอร์ติดต่อ</label>
-                  <select id="inputState" class="form-control" name="customer">
-                        @foreach($customers as $customer)
-                        <option @if($customer->id == $maintenance->customer->id) {{"selected"}} @endif value="{{$customer->id}}">{{$customer->telephone}}</option>
-                        @endforeach
-                  </select>
+                  <input type="text" class="form-control" name="phone" id="name" placeholder="" required="" value="{{$maintenance->phone}}"> 
                   <br>
                   <label for="name">วันแจ้งซ่อม</label>
                   <input type="date" class="form-control" name="end" id="name" placeholder="End date" required="" value="{{$maintenance->created_at->toDateString()}}">

@@ -17,12 +17,7 @@ class MaintenanceController extends Controller
 
             $maintenances = Maintenance
 
-                ::whereHas('customer', function ($query) {
-                    $query->where('telephone', 'like', '%' . request('query') . '%');
-                })
-
-
-                ->orwhereHas('room', function ($query) {
+                ::whereHas('room', function ($query) {
                     $query->where('building', 'like', '%' . request('query') . '%');
                 })
 
@@ -36,7 +31,7 @@ class MaintenanceController extends Controller
 
                 ->get();
         } else {
-            $maintenances = Maintenance::with('room', 'customer')->get();
+            $maintenances = Maintenance::with('room')->get();
         }
 
         return view('maintenance-index', compact('maintenances'));
@@ -45,8 +40,7 @@ class MaintenanceController extends Controller
     public function create()
     {
         $rooms = Room::all();
-        $customers = Customer::all();
-        return view('maintenance-create', compact('rooms', 'customers'));
+        return view('maintenance-create', compact('rooms'));
     }
 
     public function store()
@@ -55,7 +49,7 @@ class MaintenanceController extends Controller
             'name' => request()->name,
             'status' => 'รอดำเนินการ',
             'room_id' => request()->room,
-            'customer_id' => request()->customer,
+            
 
         ]);
 
@@ -65,8 +59,8 @@ class MaintenanceController extends Controller
     public function edit(maintenance $maintenance)
     {
         $rooms = Room::all();
-        $customers = Customer::all();
-        return view('maintenance-edit', compact('rooms', 'customers', 'maintenance'));
+        
+        return view('maintenance-edit', compact('rooms', 'maintenance'));
     }
 
     public function update(Request $request, maintenance $maintenance)
@@ -75,7 +69,7 @@ class MaintenanceController extends Controller
             'name' => request()->name,
             'status' => request()->status,
             'room_id' => request()->room,
-            'customer_id' => request()->customer,
+            
         ]);
 
         return redirect('/maintenance/index');

@@ -26,10 +26,14 @@ class RoomController extends Controller
     }
 
     public function store(){
+
+        $path = request()->file('document')->store('documents','public');
+
         Room::create([
             'building' => request()->build,
             'number' => request()->number,
             'furniture'=>'เตียง,ตู้เสื้อผ้า,โต๊ะเครื่องแป้ง,เครื่องทำน้ำอุ่น,พัดลม,เครื่องปรับอากาศ',
+            'document' => $path,
             'status'=>'ว่าง'
         ]);
 
@@ -47,12 +51,25 @@ class RoomController extends Controller
     }
 
     public function update(Room $room){
+        $path = null;
+        if(request()->hasFile('document')){
+            $path = request()->file('document')->store('documents','public');
+            
+        $room->update([
+            'building' => request()->build,
+            'number' => request()->number,
+            'furniture' => request()->furniture,
+            'document' => $path,
+            'status'=>request()->status,
+        ]);
+    }else {
         $room->update([
             'building' => request()->build,
             'number' => request()->number,
             'furniture' => request()->furniture,
             'status'=>request()->status,
-        ]);
+            ]);
+        }
         return redirect('/room/index');
     }
 

@@ -31,7 +31,7 @@
                   <td>{{$maintenance->name}}</td>
                   <td>{{$maintenance->room->building}}</td>
                   <td>{{$maintenance->room->number}}</td>
-                  <td>{{$maintenance->customer->telephone}}</td>
+                  <td>{{$maintenance->phone}}</td>
                   <td>{{date('d-m-Y', strtotime($maintenance->created_at))}}</td>
                   @if($maintenance->status == 'เสร็จสิ้น')
                   <td><h5><span class="badge badge-success">{{$maintenance->status}}</span></h5></td>   

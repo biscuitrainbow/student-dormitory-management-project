@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>A simple, clean, and responsive HTML invoice template</title>
+    <title>รายงานบิลเงินสดสุทธิ</title>
     
     <style>
     .invoice-box {
@@ -156,7 +156,7 @@ body,td,tr,th,h4 {
                             
                             <td>
                                 {{$invoice->customer->first_name .' '. $invoice->customer->last_name}}<br>
-                                {{$invoice->customer->e_mail}}
+                                {{$invoice->room->building .' '. $invoice->room->number}}
                             </td>
                         </tr>
                     </table>
@@ -181,7 +181,7 @@ body,td,tr,th,h4 {
                 </td>
                 
                 <td>
-                    {{$invoice->room_price}}
+                    {{$invoice->room_price}} บาท
                 </td>
             </tr>
             
@@ -191,7 +191,7 @@ body,td,tr,th,h4 {
                 </td>
                 
                 <td>
-                {{$invoice->internet_price}}
+                {{$invoice->internet_price}} บาท
                 </td>
             </tr>
             
@@ -201,7 +201,7 @@ body,td,tr,th,h4 {
                 </td>
                 
                 <td>
-                {{($invoice->water_unit-$invoice->last_water_unit)* 17}} ({{$invoice->water_unit-$invoice->last_water_unit}})
+                {{($invoice->water_unit-$invoice->last_water_unit)* 17}} ({{$invoice->water_unit-$invoice->last_water_unit}}) บาท/หน่วย
                 </td>
             </tr>
 
@@ -212,7 +212,7 @@ body,td,tr,th,h4 {
                 
                 <td>
 
-                {{($invoice->electricity_unit-$invoice->last_electricity_unit)*8}} ({{$invoice->electricity_unit-$invoice->last_electricity_unit}})
+                {{($invoice->electricity_unit-$invoice->last_electricity_unit)*8}} ({{$invoice->electricity_unit-$invoice->last_electricity_unit}}) บาท/หน่วย
                 </td>
             </tr>
             
@@ -220,7 +220,7 @@ body,td,tr,th,h4 {
                 <td></td>
                 
                 <td>
-                {{$invoice->total}}
+                ราคาทั้งหมด {{$invoice->total}} บาท
                 </td>
             </tr>
         </table>

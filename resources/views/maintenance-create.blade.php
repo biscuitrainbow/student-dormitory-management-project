@@ -19,14 +19,10 @@
                   </select>
                   <br>
                   <label for="name">เบอร์ติดต่อ</label>
-                  <select id="inputState" class="form-control" name="customer">
-                        @foreach($customers as $customer)
-                        <option value="{{$customer->id}}">{{$customer->telephone}}</option>
-                        @endforeach
-                  </select>
+                  <input type="text" class="form-control" name="phone" id="name" placeholder="" required="" value="">
                   <br>
                   <label for="name">วันแจ้งซ่อม</label>
-                  <input type="date" class="form-control" name="start" id="name" placeholder="Create date" required="" value="">
+                  <input type="date" class="form-control" name="start" id="name" placeholder="" required="" value="">
                   
                 </div>             	
             </table>

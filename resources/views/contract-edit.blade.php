@@ -42,10 +42,9 @@
                   <label for="name">ชื่อผู้เช่าร่วม</label>
                   <input type="text" class="form-control" name="witness" id="name" placeholder="Witness name" required="" value="{{$contract->witness_name}}">
                   <br>
-                  สำเนาสัญญา : <a href="/storage/{{$contract->document}}">Document</a><br>
-                    <label for="file">File</label>
+                  สำเนาสัญญา : <a href="/storage/{{$contract->document}}">สำเนาปัจจุบัน</a> ->
                      <input id="file" class="form-controler" name="document" type="file">
-                  <br>
+                  <br><br>
                   <p>สถานะ</p>
   <div class="form-check">
   <input class="form-check-input" type="radio" name="status" id="exampleRadios1" value="มีสัญญา"
