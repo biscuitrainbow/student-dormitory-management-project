@@ -32,7 +32,7 @@
                   <td>{{$room->number}}</td>
                   <td>{{$room->furniture}}</td>
                   <td>
-                    <a href="/storage/{{$room->document}}">สำเนา</a>
+                    <a href="/storage/{{$room->document}}">รูปห้อง</a>
                     </td>
 
                   @if($room->status == 'ว่าง')

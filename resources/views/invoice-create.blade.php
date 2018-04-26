@@ -29,6 +29,17 @@
                       <input type="text" class="form-control" name="internet" id="name" placeholder="" required="" value="">
                       <br>
                       <div class="form-row">
+                        <div class="form-group col-md-6">
+                        <label for="name">ค่าน้ำหน่วยละ</label>
+                        <input type="text" class="form-control" name="u_w_p" id="name" placeholder="บาท" required="" value="">
+                        </div>
+                        <div class="form-group col-md-6">
+                        <label for="name">ค่าไฟหน่วยละ</label>
+                        <input type="text" class="form-control" name="u_e_p" id="name" placeholder="บาท" required="" value="">
+                      </div>
+                    </div>
+                      <br>
+                      <div class="form-row">
                       <div class="form-group col-md-6">
                       <label for="name">ยูนิตน้ำเดือนก่อน	</label>
                       <input type="text" class="form-control" name="lastw" id="name" placeholder="ยูนิต" required="" value="">

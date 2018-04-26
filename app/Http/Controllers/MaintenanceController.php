@@ -6,7 +6,7 @@ use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use App\Maintenance;
 use App\Room;
-use App\Customer;
+
 
 class MaintenanceController extends Controller
 {
@@ -47,6 +47,7 @@ class MaintenanceController extends Controller
     {
         Maintenance::create([
             'name' => request()->name,
+            'phone' => request()->phone,
             'status' => 'รอดำเนินการ',
             'room_id' => request()->room,
             
@@ -67,6 +68,7 @@ class MaintenanceController extends Controller
     {
         $maintenance->update([
             'name' => request()->name,
+            'phone' => request()->phone,
             'status' => request()->status,
             'room_id' => request()->room,
             

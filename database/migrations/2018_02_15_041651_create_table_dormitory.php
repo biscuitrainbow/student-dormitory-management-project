@@ -57,8 +57,7 @@ class CreateTableDormitory extends Migration
 
             $table->integer('room_id')->unsigned();
             $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade');
-            $table->integer('customer_id')->unsigned();
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+            
             
             $table->timestamps();
         });
@@ -67,6 +66,8 @@ class CreateTableDormitory extends Migration
             $table->increments('id');
             $table->float('room_price');
             $table->integer('internet_price');
+            $table->integer('water_unit_price');
+            $table->integer('electricity_unit_price');
             $table->integer('last_water_unit');
             $table->integer('water_unit');
             $table->integer('last_electricity_unit');
