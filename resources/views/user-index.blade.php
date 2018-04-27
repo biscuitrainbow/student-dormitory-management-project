@@ -3,7 +3,7 @@
 <h2>รายการผู้ใช้</h2><br>
 <user-page inline-template>
   <div class="table-responsive">
-    <table class="table table-striped table-sm">
+    <table class="table table-sm">
       <thead>
         <tr>
           <th>#</th>
@@ -48,4 +48,6 @@
 </user-page>
 
 </div>
+<script src="/js/app.js"></script>
+
 @endsection

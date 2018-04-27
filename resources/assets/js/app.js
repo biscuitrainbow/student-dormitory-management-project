@@ -21,6 +21,9 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 Vue.component('user-page', require('./components/UserPage.vue'));
 Vue.component('room-page', require('./components/RoomPage.vue'));
 Vue.component('customer-page', require('./components/CustomerPage.vue'));
+Vue.component('contract-page', require('./components/ContractPage.vue'));
+Vue.component('maintenance-page', require('./components/Maintenance.vue'));
+Vue.component('invoice-page', require('./components/InvoicePage.vue'));
 
 Vue.use(VueSwal)
 

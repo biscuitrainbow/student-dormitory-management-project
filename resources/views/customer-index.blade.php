@@ -12,7 +12,7 @@
 <br>
 <customer-page inline-template>
   <div class="table-responsive">
-    <table class="table table-striped table-sm">
+    <table class="table  table-sm">
       <thead>
         <tr>
           <th>#</th>
@@ -69,4 +69,6 @@
     </div>
 </customer-page>
 </div>
+<script src="/js/app.js"></script>
+
 @endsection
