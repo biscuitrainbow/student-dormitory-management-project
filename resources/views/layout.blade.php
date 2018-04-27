@@ -98,7 +98,7 @@
         </div>
         </nav>
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <main id="app" role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           @section('content')
           @show
         
@@ -151,5 +151,6 @@
         }
       });
     </script>
+    <script src="/js/app.js"></script>
   </body>
 </html>
