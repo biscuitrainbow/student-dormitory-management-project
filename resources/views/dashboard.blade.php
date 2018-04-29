@@ -50,7 +50,7 @@
     <div class="flex flex-col"><br>
       <h5>รายการห้องว่าง</h5><br>
       <div class="table-responsive">
-        <table class="table table-striped table-sm">
+        <table class="table table-sm">
           <thead>
             <tr>
               <th>#</th>
@@ -74,7 +74,7 @@
       
       <h5>รายการแจ้งซ่อม</h5><br>
       <div class="table-responsive">
-          <table class="table table-striped table-sm">
+          <table class="table table-sm">
             <thead>
               <tr>
                 <th>#</th>
@@ -101,7 +101,7 @@
 
         <h5>รายการค้างชำระ</h5><br>
         <div class="table-responsive">
-            <table class="table table-striped table-sm">
+            <table class="table table-sm">
               <thead>
                 <tr>
                   <th>#</th>

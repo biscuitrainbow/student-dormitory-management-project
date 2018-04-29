@@ -16,8 +16,6 @@ class Maintenance extends Model
         return $this->belongsTo(Room::class,'room_id');
     }
 
-    public function customer(){
-        return $this->belongsTo(Customer::class,'customer_id');
-    }
+    
 
 }

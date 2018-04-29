@@ -30,6 +30,17 @@
                       <input type="text" class="form-control" name="internet" id="name" placeholder="Internet price" required="" value="{{$invoice->internet_price}}">
                       <br>
                       <div class="form-row">
+                        <div class="form-group col-md-6">
+                        <label for="name">ค่าน้ำหน่วยละ</label>
+                        <input type="text" class="form-control" name="u_w_p" id="name" placeholder="บาท" required="" value="{{$invoice->water_unit_price}}">
+                        </div>
+                        <div class="form-group col-md-6">
+                        <label for="name">ค่าไฟหน่วยละ</label>
+                        <input type="text" class="form-control" name="u_e_p" id="name" placeholder="บาท" required="" value="{{$invoice->electricity_unit_price}}">
+                      </div>
+                    </div>
+                      <br>
+                      <div class="form-row">
                       <div class="form-group col-md-6">
                       <label for="name">ยูนิตน้ำเดือนก่อน</label>
                       <input type="text" class="form-control" name="lastw" id="name" placeholder="Last mount water unit" required="" value="{{$invoice->last_water_unit}}">

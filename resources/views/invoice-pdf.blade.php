@@ -197,7 +197,7 @@ body,td,tr,th,h4 {
             
             <tr class="item">
                 <td>
-                    ยูนิตค่าน้ำ (17 บาท/ยูนิต)
+                    ยูนิตค่าน้ำ ({{$invoice->water_unit_price}} บาท/ยูนิต)
                 </td>
                 
                 <td>
@@ -207,7 +207,7 @@ body,td,tr,th,h4 {
 
             <tr class="item last">
                 <td>
-                    ยูนิตค่าไฟฟ้า (8 บาท/ยูนิต)
+                    ยูนิตค่าไฟฟ้า ({{$invoice->electricity_unit_price}} บาท/ยูนิต)
                 </td>
                 
                 <td>

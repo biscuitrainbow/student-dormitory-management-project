@@ -61,13 +61,16 @@ class InvoiceController extends Controller
     public function store(Request $request)
     {
 
-        
+        $uwater = request()->u_w_p;
+        $uelectricity = request()->u_e_p;
         $water = request()->water_unit - request()->lastw;
         $electricity = request()->electricity_unit - request()->laste;
-        $total = request()->room_price + $water*17 + $electricity*8 +  request()->internet;
+        $total = request()->room_price + ($water*$uwater) + ($electricity*$uelectricity) +  request()->internet;
 
         Invoice::create([
             'room_price' => request()->room_price,
+            'water_unit_price' => request()->u_w_p,
+            'electricity_unit_price' => request()->u_e_p,
             'last_water_unit' => request()->lastw,
             'water_unit' => request()->water_unit,
             'last_electricity_unit' => request()->laste,
@@ -116,12 +119,16 @@ class InvoiceController extends Controller
     public function update(Request $request, Invoice $invoice)
     {
 
+        $uwater = request()->u_w_p;
+        $uelectricity = request()->u_e_p;
         $water = request()->water_unit - request()->lastw;
         $electricity = request()->electricity_unit - request()->laste;
-        $total = request()->room_price + $water*17 + $electricity*8 +  request()->internet;
+        $total = request()->room_price + ($water*$uwater) + ($electricity*$uelectricity) +  request()->internet;
      
      $invoice->update([
         'room_price' => request()->room_price,
+        'water_unit_price' => request()->u_w_p,
+        'electricity_unit_price' => request()->u_e_p,
         'last_water_unit' => request()->lastw,
         'water_unit' => request()->water_unit,
         'last_electricity_unit' => request()->laste,
