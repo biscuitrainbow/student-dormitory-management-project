@@ -377,33 +377,6 @@ module.exports = {
 /* 1 */
 /***/ (function(module, exports) {
 
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
 /* globals __VUE_SSR_CONTEXT__ */
 
 // IMPORTANT: Do NOT use ES2015 features in this file.
@@ -507,6 +480,33 @@ module.exports = function normalizeComponent (
     options: options
   }
 }
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
 
 
 /***/ }),
@@ -3136,7 +3136,7 @@ Popper.Defaults = Defaults;
 /* harmony default export */ __webpack_exports__["default"] = (Popper);
 //# sourceMappingURL=popper.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
 /* 5 */
@@ -13972,7 +13972,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(50);
+module.exports = __webpack_require__(56);
 
 
 /***/ }),
@@ -14006,9 +14006,9 @@ Vue.component('example-component', __webpack_require__(41));
 Vue.component('user-page', __webpack_require__(44));
 Vue.component('room-page', __webpack_require__(46));
 Vue.component('customer-page', __webpack_require__(48));
-Vue.component('contract-page', __webpack_require__(55));
-Vue.component('maintenance-page', __webpack_require__(57));
-Vue.component('invoice-page', __webpack_require__(59));
+Vue.component('contract-page', __webpack_require__(50));
+Vue.component('maintenance-page', __webpack_require__(52));
+Vue.component('invoice-page', __webpack_require__(54));
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_swal___default.a);
 
@@ -31188,7 +31188,7 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(16)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(16)(module)))
 
 /***/ }),
 /* 16 */
@@ -47003,7 +47003,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(38).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(38).setImmediate))
 
 /***/ }),
 /* 38 */
@@ -47073,7 +47073,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 39 */
@@ -47266,7 +47266,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(7)))
 
 /***/ }),
 /* 40 */
@@ -47405,7 +47405,7 @@ exports.version = version;
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(42)
 /* template */
@@ -47524,7 +47524,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(45)
 /* template */
@@ -47579,9 +47579,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
-    remove: function remove(id) {
+    remove: function remove(id, name) {
       this.$swal({
-        title: "Are you sure?",
+        title: "\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E25\u0E1A\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E02\u0E2D\u0E07 " + name + " \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48?",
         icon: "warning",
         buttons: true,
         dangerMode: true
@@ -47603,7 +47603,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(47)
 /* template */
@@ -47658,9 +47658,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
-    remove: function remove(id) {
+    remove: function remove(id, name) {
       this.$swal({
-        title: "Are you sure?",
+        title: "\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E25\u0E1A\u0E2B\u0E49\u0E2D\u0E07 " + name + " \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48?",
         icon: "warning",
         buttons: true,
         dangerMode: true
@@ -47682,7 +47682,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(49)
 /* template */
@@ -47737,9 +47737,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
-    remove: function remove(id) {
+    remove: function remove(id, name) {
       this.$swal({
-        title: "Are you sure?",
+        title: "\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E25\u0E1A\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E02\u0E2D\u0E07 " + name + " \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48?",
         icon: "warning",
         buttons: true,
         dangerMode: true
@@ -47758,22 +47758,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 /* 50 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(56)
+var __vue_script__ = __webpack_require__(51)
 /* template */
 var __vue_template__ = null
 /* template functional */
@@ -47814,7 +47804,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 56 */
+/* 51 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47826,9 +47816,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
-    remove: function remove(id) {
+    remove: function remove(id, name) {
       this.$swal({
-        title: "Are you sure?",
+        title: "\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E25\u0E1A\u0E2A\u0E31\u0E0D\u0E0D\u0E32\u0E02\u0E2D\u0E07 " + name + " \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48?",
         icon: "warning",
         buttons: true,
         dangerMode: true
@@ -47846,13 +47836,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 57 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(58)
+var __vue_script__ = __webpack_require__(53)
 /* template */
 var __vue_template__ = null
 /* template functional */
@@ -47893,7 +47883,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 58 */
+/* 53 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47907,7 +47897,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     remove: function remove(id) {
       this.$swal({
-        title: "Are you sure?",
+        title: "ต้องการลบข้อมูลนี้หรือไม่?",
         icon: "warning",
         buttons: true,
         dangerMode: true
@@ -47925,13 +47915,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 59 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(60)
+var __vue_script__ = __webpack_require__(55)
 /* template */
 var __vue_template__ = null
 /* template functional */
@@ -47972,7 +47962,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 60 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47984,9 +47974,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
-    remove: function remove(id) {
+    remove: function remove(id, name) {
       this.$swal({
-        title: "Are you sure?",
+        title: "\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E25\u0E1A\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E01\u0E32\u0E23\u0E0A\u0E33\u0E23\u0E30\u0E02\u0E2D\u0E07\u0E2B\u0E49\u0E2D\u0E07 " + name + " \u0E2B\u0E23\u0E37\u0E2D\u0E44\u0E21\u0E48?",
         icon: "warning",
         buttons: true,
         dangerMode: true
@@ -48002,6 +47992,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   }
 });
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

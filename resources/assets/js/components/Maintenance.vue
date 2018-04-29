@@ -6,7 +6,7 @@ export default {
   methods: {
     remove(id) {
       this.$swal({
-        title: "Are you sure?",
+        title: "ต้องการลบข้อมูลนี้หรือไม่?",
         icon: "warning",
         buttons: true,
         dangerMode: true

@@ -24,7 +24,7 @@
             <div class="btn-group" role="group" aria-label="Basic example">
               <a href="/user/edit/{{$user->id}}" class="btn btn-warning">แก้ไข</a>
               {{-- <a href="/user/delete/{{$user->id}}" class="btn btn-danger">ลบ</a> --}}
-              <a @click="remove({{$user->id}})"  class="btn btn-danger">ลบ</a>
+              <a @click="remove({{$user->id}},'{{$user->first_name}}')"  class="btn btn-danger">ลบ</a>
             </div>
           </td>
         </tr>

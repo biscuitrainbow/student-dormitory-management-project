@@ -46,7 +46,7 @@
             <td>
             <div class="btn-group" role="group" aria-label="Basic example">
             <a href="/invoices/{{$invoice->id}}/edit" class="btn btn-warning">แก้ไข</a>
-            <a @click="remove({{$invoice->id}})" class="btn btn-danger">ลบ</a>
+            <a @click="remove({{$invoice->id}},'{{$invoice->room->number}}')" class="btn btn-danger">ลบ</a>
             <a href="/invoices/pdf/{{$invoice->id}}" class="btn btn-primary">PDF</a></div>
             </td>
               </tr>

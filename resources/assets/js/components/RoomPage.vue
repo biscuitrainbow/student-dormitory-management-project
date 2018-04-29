@@ -4,9 +4,9 @@ export default {
     console.log("Component mounted.");
   },
   methods: {
-    remove(id) {
+    remove(id,name) {
       this.$swal({
-        title: "Are you sure?",
+        title: `ต้องการลบห้อง ${name} หรือไม่?`,
         icon: "warning",
         buttons: true,
         dangerMode: true

@@ -53,7 +53,7 @@
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
               <a href="/customer/edit/{{$customer->id}}" class="btn btn-warning">แก้ไข</a>
-              <a @click="remove({{$customer->id}})" class="btn btn-danger">ลบ</a></div>
+              <a @click="remove({{$customer->id}},'{{$customer->first_name}}')" class="btn btn-danger">ลบ</a></div>
           </td>
         </tr>
         @endforeach
