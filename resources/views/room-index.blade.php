@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout') 
 @section('content')
 <form action="/room/index">
   <input class="form-control form-control-dark w-100" type="text" name="query" placeholder="ค้นหา" aria-label="Search">
@@ -11,55 +11,65 @@
   </a>
 </div>
 <br>
-          <div class="table-responsive">
-            <table class="table table-striped table-sm">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>อาคาร</th>
-                  <th>เลขห้อง</th>
-                  <th>เฟอร์นิเจอร์</th>
-                  <th>รูปห้อง</th>
-                  <th>สถานะ</th>
-				          <th>จัดการข้อมูล</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach($rooms as $room)
-                <tr>
-                  <td>{{$loop->iteration}}</td>
-                  <td>{{$room->building}}</td>
-                  <td>{{$room->number}}</td>
-                  <td>{{$room->furniture}}</td>
-                  <td>
-                    <a href="/storage/{{$room->document}}">รูปห้อง</a>
-                    </td>
 
-                  @if($room->status == 'ว่าง')
-                  <td><h5><span class="badge badge-success">{{$room->status}}</span></h5></td>   
-                  @else 
-                  <td><h5><span class="badge badge-danger">{{$room->status}}</span></h5></td>   
-                  @endif
-				  <td>
-          <div class="btn-group" role="group" aria-label="Basic example">
-          <a href="/room/edit/{{$room->id}}" class="btn btn-warning">แก้ไข</a>
-          <a href="/room/delete/{{$room->id}}" class="btn btn-danger">ลบ</a></DIV></td>
-                </tr>
-                @endforeach
-                
-        
-              </tbody>
-				<div class="row">
-        
-				
-            </table>
-            <br>
-				    <div class="col-xs-12 text-center">
-            <a href="/room/create">
-            <button class="btn btn-success">เพิ่มข้อมูล</button>
-            </a>  
-        </div>
-        <br>
-      </div>
-          </div>
+<room-page inline-template>
+  <div class="table-responsive">
+    <table class="table  table-sm">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>อาคาร</th>
+          <th>เลขห้อง</th>
+          <th>เฟอร์นิเจอร์</th>
+          <th>รูปห้อง</th>
+          <th>สถานะ</th>
+          <th>จัดการข้อมูล</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach($rooms as $room)
+        <tr>
+          <td>{{$loop->iteration}}</td>
+          <td>{{$room->building}}</td>
+          <td>{{$room->number}}</td>
+          <td>{{$room->furniture}}</td>
+          <td>
+            <a href="/storage/{{$room->document}}">สำเนา</a>
+          </td>
+
+          @if($room->status == 'ว่าง')
+          <td>
+            <h5><span class="badge badge-success">{{$room->status}}</span></h5>
+          </td>
+          @else
+          <td>
+            <h5><span class="badge badge-danger">{{$room->status}}</span></h5>
+          </td>
+          @endif
+          <td>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <a href="/room/edit/{{$room->id}}" class="btn btn-warning">แก้ไข</a>
+              <a @click="remove({{$room->id}})" class="btn btn-danger">ลบ</a></DIV>
+          </td>
+        </tr>
+        @endforeach
+
+
+      </tbody>
+      <div class="row">
+
+
+    </table>
+    <br>
+    <div class="col-xs-12 text-center">
+      <a href="/room/create">
+    <button class="btn btn-success">เพิ่มข้อมูล</button>
+    </a>
+    </div>
+    <br>
+    </div>
+</room-page>
+</div>
+<script src="/js/app.js"></script>
+
 @endsection

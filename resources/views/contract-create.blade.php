@@ -49,8 +49,9 @@
 				<div class="col-xs-12 text-center">
             <button type="submit" class="btn btn-success">เพิ่มข้อมูล</button>
             <a href="/contract/index" class="btn btn-secondary">กลับ</a>
-          </form>
         </div>
+      </form>
+
       </div>
           </div>
 @endsection

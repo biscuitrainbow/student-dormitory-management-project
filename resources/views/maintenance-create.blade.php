@@ -19,7 +19,7 @@
                   </select>
                   <br>
                   <label for="name">เบอร์ติดต่อ</label>
-                  <input type="text" class="form-control" name="phone" id="name" placeholder="" required="" value="">
+                  <input type="number" class="form-control" name="phone" id="name" placeholder="" required="" value="">
                   <br>
                   <label for="name">วันแจ้งซ่อม</label>
                   <input type="date" class="form-control" name="start" id="name" placeholder="" required="" value="">
